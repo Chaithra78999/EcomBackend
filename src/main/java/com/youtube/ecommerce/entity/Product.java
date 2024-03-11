@@ -1,6 +1,9 @@
 package com.youtube.ecommerce.entity;
 
 import javax.persistence.*;
+
+import com.youtube.ecommerce.configuration.ImageModel;
+
 import java.util.Set;
 
 @Entity

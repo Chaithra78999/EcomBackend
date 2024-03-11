@@ -1,4 +1,4 @@
-package com.youtube.ecommerce.entity;
+package com.youtube.ecommerce.configuration;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ public class OrderInput {
     private String fullAddress;
     private String contactNumber;
     private String alternateContactNumber;
-    private String transactionId;
+   private String transactionId;
     private List<OrderProductQuantity> orderProductQuantityList;
 
     public String getTransactionId() {

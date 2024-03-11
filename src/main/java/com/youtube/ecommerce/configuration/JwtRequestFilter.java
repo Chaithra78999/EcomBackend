@@ -1,6 +1,5 @@
 package com.youtube.ecommerce.configuration;
 
-import com.youtube.ecommerce.service.JwtService;
 import com.youtube.ecommerce.util.JwtUtil;
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.youtube.ecommerce.controller;
 
-import com.youtube.ecommerce.entity.ImageModel;
+import com.youtube.ecommerce.configuration.ImageModel;
 import com.youtube.ecommerce.entity.Product;
 import com.youtube.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,13 @@ public class ProductController {
     private ProductService productService;
 
     @PreAuthorize("hasRole('Admin')")
-    @PostMapping(value = {"/addNewProduct"}, consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+    @PostMapping({"/addNewProduct"})
+    public Product addNewProduct(@RequestBody Product product) {
+        return productService.addNewProduct(product); 
+
+    }
+
+     @PostMapping(value = {"/addNewProduct"}, consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public Product addNewProduct(@RequestPart("product") Product product,
                                  @RequestPart("imageFile") MultipartFile[] file) {
         try {
